@@ -1,0 +1,93 @@
+<html>
+
+<head>
+    {% load static %}
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+    <title>Sistema Ordenes </title>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="{% static 'css/materialize.min.css' %}" media="screen,projection" />
+</head>
+
+<body>
+    
+    <nav class="nav-extended teal ">
+        <div class="nav-wrapper">
+            <a href="index" class="brand-logo center">SI - Interno</a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+           
+        </div>
+        <div class="nav-content">
+            <ul class="tabs tabs-transparent  hide-on-med-and-down">
+                <li class="tab"><a href="registrarorden">Registrar Orden</a></li>
+                <li class="tab"><a href="">Listado De Ordenes</a></li>
+                <li class="tab"><a href="">Listado De Clientes</a></li>
+                <li class="tab">Bienvenido, {{usuario}} &nbsp</li>
+                <li class="tab"> <a href="logout">Cerrar sesion</a></li>
+                <li class="tab center"> <a href="admin">Administracion</a></li>
+                
+            </ul>
+        </div>
+    </nav>
+
+    <ul class="sidenav" id="mobile-demo">
+            <li class="tab center"><a href="registrarorden">Registrar Orden</a></li>
+            <li class="tab center"><a href="">Listado De Ordenes</a></li>
+            <li class="tab center"><a href="">Listado De Clientes</a></li>
+           
+            <li class="tab center">Bienvenido, {{usuario}} &nbsp</li>
+           
+            <li class="tab center"> <a href="logout">Cerrar sesion</a></li> 
+            <li class="tab center"> <a href="admin">Administracion</a></li>
+    </ul>
+
+    
+
+
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.datepicker').datepicker({
+                format: 'dd-mm-yyyy',
+                selectMonths: true,
+                selectYears: 120
+            })
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('select').formSelect();
+        });
+        $(document).change(function () {
+            $('select').formSelect();
+        });
+
+        $(document).ready(function () {
+            $('.sidenav').sidenav();
+        });
+        $(document).ready(function () {
+            $('.modal').modal();
+        });
+        $('.carousel').carousel({});
+        setTimeout(autoplay, 4500);
+
+        function autoplay() {
+            $('.carousel').carousel('next');
+            setTimeout(autoplay, 4500);
+        };
+        $('.carousel.carousel-slider').carousel({
+            fullWidth: true
+        });
+        $(document).ready(function () {
+            $('.materialboxed').materialbox();
+        });
+        $(document).ready(function () {
+            $('.sidenav').sidenav();
+        });
+    </script>
+</body>
+
+</html>
