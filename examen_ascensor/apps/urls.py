@@ -8,6 +8,8 @@ urlpatterns = [
     path('login/', views.login, name='login'),
     path('registrarorden/', views.registrarorden, name='registrarorden'),
     path('logout', views.logout, name='logout'),
-   
+    url(r'^auth/', include('social_django.urls', namespace='social')),  # <- Agregar
+
+#En caso de que no funcione, cambiar "url por path"  
     
 ]

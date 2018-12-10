@@ -57,3 +57,8 @@ def registrarorden(request):
     else:
         form = OrdenForm()
     return render(request, 'registrarorden.html', {'form': form, 'usuario': usuarioLogeado})
+
+
+#agregar
+def index(request):#deberia funcionar con o sin esto, debido a que ya hay un "def index"
+	return render(request, 'index.html')

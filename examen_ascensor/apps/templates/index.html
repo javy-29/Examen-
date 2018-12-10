@@ -12,38 +12,44 @@
 </head>
 
 <body>
-    
+
     <nav class="nav-extended teal ">
         <div class="nav-wrapper">
             <a href="index" class="brand-logo center">SI - Interno</a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-           
+
         </div>
         <div class="nav-content">
             <ul class="tabs tabs-transparent  hide-on-med-and-down">
                 <li class="tab"><a href="registrarorden">Registrar Orden</a></li>
                 <li class="tab"><a href="">Listado De Ordenes</a></li>
                 <li class="tab"><a href="">Listado De Clientes</a></li>
-                <li class="tab">Bienvenido, {{usuario}} &nbsp</li>
+                <li class="tab">Bienvenido, {{usuario}} &nbsp
+                    {% if user.is_authenticated %} <!--AGREGAR-->
+                    <p class="display-4">Hello, {{ user.username }}</p><!--AGREGAR-->
+                    {% else %}<!--AGREGAR-->
+                    <a class="lead" href="{% url 'login' %}">Log in</a><!--AGREGAR-->
+                    {% endif %}<!--AGREGAR-->
+                </li>
                 <li class="tab"> <a href="logout">Cerrar sesion</a></li>
                 <li class="tab center"> <a href="admin">Administracion</a></li>
-                
+
             </ul>
         </div>
     </nav>
 
     <ul class="sidenav" id="mobile-demo">
-            <li class="tab center"><a href="registrarorden">Registrar Orden</a></li>
-            <li class="tab center"><a href="">Listado De Ordenes</a></li>
-            <li class="tab center"><a href="">Listado De Clientes</a></li>
-           
-            <li class="tab center">Bienvenido, {{usuario}} &nbsp</li>
-           
-            <li class="tab center"> <a href="logout">Cerrar sesion</a></li> 
-            <li class="tab center"> <a href="admin">Administracion</a></li>
+        <li class="tab center"><a href="registrarorden">Registrar Orden</a></li>
+        <li class="tab center"><a href="">Listado De Ordenes</a></li>
+        <li class="tab center"><a href="">Listado De Clientes</a></li>
+
+        <li class="tab center">Bienvenido, {{usuario}} &nbsp</li>
+
+        <li class="tab center"> <a href="logout">Cerrar sesion</a></li>
+        <li class="tab center"> <a href="admin">Administracion</a></li>
     </ul>
 
-    
+
 
 
     <script src="https://code.jquery.com/jquery-2.1.1.min.js "></script>
